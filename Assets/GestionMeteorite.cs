@@ -5,31 +5,31 @@ using UnityEngine;
 
 public class GestionMeteorite : MonoBehaviour
 {
-	public GameObject meteoritePrefab;
-	public GameObject[] meteoriteTab;
-	public float nextMeteoriteTime = 0;
-	public float meteoriteAppearanceInterval = 1;
-	public int nbMeteoriteMax = 10;
+	public GameObject _meteoritePrefab;
+	public GameObject[] _meteoriteTab;
+	public float _nextMeteoriteTime = 0;
+	public float _meteoriteAppearanceInterval = 1;
+	public int _nbMeteoriteMax = 10;
 
 	void Start()
 	{
 		// On charge la météorite via le prefab
-		meteoritePrefab = Resources.Load("Prefabs/Meteorite") as GameObject;
+		_meteoritePrefab = Resources.Load("Prefabs/Meteorite") as GameObject;
 
 		// On crée un tableau de météorites
-		meteoriteTab = new GameObject[nbMeteoriteMax];
+		_meteoriteTab = new GameObject[_nbMeteoriteMax];
 	}
 
 	void Update()
 	{
 		// On fait apparêtre une météorite toutes les 1 à 3 secondes
-		if (Time.time > nextMeteoriteTime)
+		if (Time.time > _nextMeteoriteTime)
 		{
 			// On cherche une entrée vide dans le tableau
 			int emptyIndex = -1;
-			for (int i = 0; i < meteoriteTab.Length; i++)
+			for (int i = 0; i < _meteoriteTab.Length; i++)
 			{
-				if (meteoriteTab[i] == null)
+				if (_meteoriteTab[i] == null)
 				{
 					emptyIndex = i;
 					break;
@@ -40,36 +40,36 @@ public class GestionMeteorite : MonoBehaviour
 			if (emptyIndex >= 0)
 			{
 				// On crée une météorite
-				GameObject m = Instantiate(meteoritePrefab);
+				GameObject m = Instantiate(_meteoritePrefab);
 				// On la place aléatoirement
-				m.transform.position = new Vector3(Random.Range(-100, 100), 10, Random.Range(-100, 100));
+				m.transform.position = new Vector3(0, 10, Random.Range(0, 150));
 				// On l'affiche
 				m.SetActive(true);
 				// On l'ajoute à la liste des météorites
-				meteoriteTab[emptyIndex] = m;
+				_meteoriteTab[emptyIndex] = m;
 			}
 
 			// On met à jour le temps pour la prochaine météorite
-			nextMeteoriteTime = Time.time + meteoriteAppearanceInterval;
-			meteoriteAppearanceInterval = Random.Range(1, 3);
+			_nextMeteoriteTime = Time.time + _meteoriteAppearanceInterval;
+			_meteoriteAppearanceInterval = Random.Range(1, 3);
 		}
 
 		// On fait tomber les météorites
-		for (int i = 0; i < meteoriteTab.Length; i++)
+		for (int i = 0; i < _meteoriteTab.Length; i++)
 		{
-			if (meteoriteTab[i] != null)
+			if (_meteoriteTab[i] != null)
 			{
-				meteoriteTab[i].transform.Translate(5 * Time.deltaTime * Vector3.down);
+				_meteoriteTab[i].transform.Translate(5 * Time.deltaTime * Vector3.down);
 			}
 		}
 
 		// On détruit les météorites qui touchent le sol
-		for (int i = 0; i < meteoriteTab.Length; i++)
+		for (int i = 0; i < _meteoriteTab.Length; i++)
 		{
-			if (meteoriteTab[i] != null && meteoriteTab[i].transform.position.y < 0)
+			if (_meteoriteTab[i] != null && _meteoriteTab[i].transform.position.y < 0)
 			{
-				Destroy(meteoriteTab[i]);
-				meteoriteTab[i] = null;
+				Destroy(_meteoriteTab[i]);
+				_meteoriteTab[i] = null;
 			}
 		}
 	}
