@@ -42,7 +42,7 @@ public class GestionMeteorite : MonoBehaviour
 				// On crée une météorite
 				GameObject m = Instantiate(_meteoritePrefab);
 				// On la place aléatoirement
-				m.transform.position = new Vector3(0, 10, Random.Range(0, 150));
+				m.transform.position += new Vector3(0, 20, Random.Range(0, 150));
 				// On l'affiche
 				m.SetActive(true);
 				// On l'ajoute à la liste des météorites
@@ -59,11 +59,11 @@ public class GestionMeteorite : MonoBehaviour
 		{
 			if (_meteoriteTab[i] != null)
 			{
-				_meteoriteTab[i].transform.Translate(5 * Time.deltaTime * Vector3.down);
+				_meteoriteTab[i].transform.Translate(10 * Time.deltaTime * Vector3.down);
 			}
 		}
 
-		// On détruit les météorites qui touchent le sol
+		// On détruit les météorites à la collision avec le sol
 		for (int i = 0; i < _meteoriteTab.Length; i++)
 		{
 			if (_meteoriteTab[i] != null && _meteoriteTab[i].transform.position.y < 0)
