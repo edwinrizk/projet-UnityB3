@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5910313200196535168}
   - component: {fileID: 3790415638688690949}
+  - component: {fileID: 3995580674677155117}
+  - component: {fileID: -7618372430317305953}
+  - component: {fileID: -724175736348838754}
   m_Layer: 0
   m_Name: Terrain de jeu
   m_TagString: Rue
@@ -78,6 +81,47 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.534753, y: 1.1682534, z: 160.07455}
   m_Center: {x: -1.7673745, y: -6.28965, z: 70.312515}
+--- !u!114 &3995580674677155117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7112265516993523149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd3d249101bff543b75c6df964b0fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _meteoritePrefab: {fileID: 0}
+  _meteoriteTab: []
+  _nextMeteoriteTime: 0
+  _meteoriteAppearanceInterval: 1
+  _nbMeteoriteMax: -134
+--- !u!114 &-7618372430317305953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7112265516993523149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ea04fea5fd53341b435223d12cc35c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-724175736348838754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7112265516993523149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99db6ce44388c87489e946e01cb8e6b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &447685040341360829
 PrefabInstance:
   m_ObjectHideFlags: 0

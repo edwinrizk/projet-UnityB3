@@ -81,7 +81,7 @@ public class GestionVoiture : MonoBehaviour
 		// On supprime les voitures qui sont sorties de la zone parente
 		for (int i = 0; i < _voitureTab.Length; i++)
 		{
-			if (_voitureTab[i] != null && _voitureTab[i].transform.position.x < transform.position.x - 96)
+			if (_voitureTab[i] != null && _voitureTab[i].transform.position.x < _voitureTab[i].transform.position.x - 96)
 			{
 				Destroy(_voitureTab[i]);
 				_voitureTab[i] = null;
