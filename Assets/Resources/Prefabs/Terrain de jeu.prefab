@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5910313200196535168}
+  - component: {fileID: 3790415638688690949}
   m_Layer: 0
   m_Name: Terrain de jeu
-  m_TagString: Untagged
+  m_TagString: Rue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,6 +65,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3790415638688690949
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7112265516993523149}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.534753, y: 1.1682534, z: 160.07455}
+  m_Center: {x: -1.7673745, y: -6.28965, z: 70.312515}
 --- !u!1001 &447685040341360829
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -55,6 +55,7 @@ public class GestionMeteorite : MonoBehaviour
 		}
 
 		// On fait tomber les météorites
+		/*
 		for (int i = 0; i < _meteoriteTab.Length; i++)
 		{
 			if (_meteoriteTab[i] != null)
@@ -62,6 +63,7 @@ public class GestionMeteorite : MonoBehaviour
 				_meteoriteTab[i].transform.Translate(10 * Time.deltaTime * Vector3.down);
 			}
 		}
+		*/
 
 		// On détruit les météorites à la collision avec le sol
 		for (int i = 0; i < _meteoriteTab.Length; i++)

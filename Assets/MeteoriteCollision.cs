@@ -20,10 +20,10 @@ public class MeteoriteCollision : MonoBehaviour
 		
 	}
 
-	void OnCollisionEnter(Collision collision)
+	void OnTriggerEnter(Collider other)
 	{
-		// Si la météorite entre en collision avec le sol, on la détruit
-		if (collision.gameObject.CompareTag("Rue"))
+		// Si la météorite touche le sol, on la détruit
+		if (other.gameObject.CompareTag("Rue"))
 		{
 			_audioSource.Play();
 			Destroy(gameObject);
