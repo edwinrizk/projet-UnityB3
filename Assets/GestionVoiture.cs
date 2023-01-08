@@ -9,7 +9,7 @@ public class GestionVoiture : MonoBehaviour
 	public GameObject[] _voiturePrefab;
 	public GameObject[] _voitureTab;
 	public float _nextVoitureTime = 0;
-	public float _voitureAppearanceInterval = 1;
+	public float _voitureAppearanceInterval = 0.30f;
 	public int _nbVoitureMax = 35;
 	
 	// Start is called before the first frame update
@@ -66,7 +66,7 @@ public class GestionVoiture : MonoBehaviour
 
 			// On met à jour le temps pour la prochaine voiture
 			_nextVoitureTime = Time.time + _voitureAppearanceInterval;
-			_voitureAppearanceInterval = Random.Range(1, 3);
+			_voitureAppearanceInterval = Random.Range(0.30f,1);
 		}
 
 		// On fait avancer les voitures sur l'axe z
@@ -74,7 +74,7 @@ public class GestionVoiture : MonoBehaviour
 		{
 			if (_voitureTab[i] != null)
 			{
-				_voitureTab[i].transform.Translate(10 * Time.deltaTime * Vector3.forward);
+				_voitureTab[i].transform.Translate(30 * Time.deltaTime * Vector3.forward);
 			}
 		}
 

@@ -9,7 +9,7 @@ public class GestionMeteorite : MonoBehaviour
 	public GameObject[] _meteoriteTab;
 	public float _nextMeteoriteTime = 0;
 	public float _meteoriteAppearanceInterval = 1;
-	public int _nbMeteoriteMax = 10;
+	public int _nbMeteoriteMax = 30;
 
 	void Start()
 	{
@@ -51,7 +51,7 @@ public class GestionMeteorite : MonoBehaviour
 
 			// On met à jour le temps pour la prochaine météorite
 			_nextMeteoriteTime = Time.time + _meteoriteAppearanceInterval;
-			_meteoriteAppearanceInterval = Random.Range(1, 3);
+			_meteoriteAppearanceInterval = Random.Range(0.30f,2 ); ;
 		}
 
 		// On fait tomber les météorites
