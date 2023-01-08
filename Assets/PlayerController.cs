@@ -14,8 +14,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-       // _isRunning = animator.StringToHash("isRunning");
-        
+         
     }
 
     // Update is called once per frame
@@ -26,13 +25,25 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(0f, 0f, _speed * Time.deltaTime);
             Debug.Log("Z is press");
+            animator.SetBool("isRunning", true);
+
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
 
         }
         //aller vers l'arriere
         if (Input.GetKey(KeyCode.S))
         {
             transform.Translate(0f, 0f, -_speed * Time.deltaTime);
-            Debug.Log("Z is press");
+            animator.SetBool("isBackward", true);
+
+
+        }
+        else
+        {
+            animator.SetBool("isBackward", false);
 
         }
 
@@ -40,7 +51,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Q))
         {
             transform.Rotate(0f, -_rotate *Time.deltaTime,0f );
-            Debug.Log("Z is press");
+            
 
         }
 
@@ -48,8 +59,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(0f, _rotate * Time.deltaTime, 0f);
-            Debug.Log("Z is press");
+            animator.SetBool("isTurn", true);
 
+        }
+        else
+        {
+            animator.SetBool("isTurn", false);
         }
     }
 }
