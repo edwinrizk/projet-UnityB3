@@ -40,7 +40,7 @@ public class GestionMeteorite : MonoBehaviour
 			if (emptyIndex >= 0)
 			{
 				// On crée une météorite
-				GameObject m = Instantiate(_meteoritePrefab);
+				GameObject m = Instantiate(_meteoritePrefab, transform);
 				// On la place aléatoirement
 				m.transform.position += new Vector3(Random.Range(-94, 94), 20, Random.Range(0, 150));
 				// On l'affiche
