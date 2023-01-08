@@ -97,7 +97,7 @@ MonoBehaviour:
   _meteoriteTab: []
   _nextMeteoriteTime: 0
   _meteoriteAppearanceInterval: 1
-  _nbMeteoriteMax: -134
+  _nbMeteoriteMax: 10
 --- !u!114 &-7618372430317305953
 MonoBehaviour:
   m_ObjectHideFlags: 0
