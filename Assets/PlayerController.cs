@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKey(KeyCode.Z))
         {
             transform.Translate(0f, 0f, _speed * Time.deltaTime);
-            Debug.Log("Z is press");
             animator.SetBool("isRunning", true);
 
         }

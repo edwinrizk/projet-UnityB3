@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Rue
+  - vehicule
+  - meteor
   layers:
   - Default
   - TransparentFX

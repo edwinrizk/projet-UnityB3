@@ -9,7 +9,7 @@ public class GestionVoiture : MonoBehaviour
 	public GameObject[] _voiturePrefab;
 	public GameObject[] _voitureTab;
 	public float _nextVoitureTime = 0;
-	public float _voitureAppearanceInterval = 0.30f;
+	public float _voitureAppearanceInterval = 0.20f;
 	public int _nbVoitureMax = 35;
 	
 	// Start is called before the first frame update
@@ -74,7 +74,7 @@ public class GestionVoiture : MonoBehaviour
 		{
 			if (_voitureTab[i] != null)
 			{
-				_voitureTab[i].transform.Translate(30 * Time.deltaTime * Vector3.forward);
+				_voitureTab[i].transform.Translate(40 * Time.deltaTime * Vector3.forward);
 			}
 		}
 
