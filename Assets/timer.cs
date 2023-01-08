@@ -14,16 +14,18 @@ public class timer : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		// timer de 5 minutes
-		if (Time.timeSinceLevelLoad > 300)
+		// timer de 3 minutes
+		if (Time.timeSinceLevelLoad > 180)
 		{
 			// On affiche le message de fin de partie
 			Debug.Log("Fin de partie");
+			// On arrête le jeu
+			Time.timeScale = 0;
 		}
 		// affiche le temps restant toutes les secondes
 		if (Time.timeSinceLevelLoad > time + 1)
 		{
-			Debug.Log("Temps restant: " + (300 - Time.timeSinceLevelLoad));
+			Debug.Log("Temps restant: " + (180 - Time.timeSinceLevelLoad));
 			time = Time.timeSinceLevelLoad;
 		}
 	}
