@@ -55,7 +55,7 @@ public class GestionVoiture : MonoBehaviour
 				// On crée une voiture enfant de la route
 				GameObject v = Instantiate(_voiturePrefab[voitureIndex], transform);
 				// On la place aléatoirement par rapport à la route parente
-				v.transform.position += new Vector3(95f, 0.09f, Mathf.Round(Random.Range(-1f, 1f)));
+				v.transform.position += new Vector3(transform.position.x + 95f, 0.09f, Mathf.Round(Random.Range(-1f, 1f)));
 				// On le fait tourner à 180°
 				v.transform.Rotate(0, 180, 0);
 				// On l'affiche
@@ -78,10 +78,10 @@ public class GestionVoiture : MonoBehaviour
 			}
 		}
 
-		// On supprime les voitures qui sont sorties de la scène
+		// On supprime les voitures qui sont sorties de la zone parente
 		for (int i = 0; i < _voitureTab.Length; i++)
 		{
-			if (_voitureTab[i] != null && _voitureTab[i].transform.position.x < -96)
+			if (_voitureTab[i] != null && _voitureTab[i].transform.position.x < transform.position.x - 96)
 			{
 				Destroy(_voitureTab[i]);
 				_voitureTab[i] = null;
